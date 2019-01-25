@@ -30,5 +30,6 @@ namespace Data.Database
         public virtual DbSet<Diet> Diets { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }

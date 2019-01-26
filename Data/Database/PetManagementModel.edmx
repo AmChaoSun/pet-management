@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="PetManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Admin">
+        <EntityType Name="AdminUser">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -68,7 +68,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PetManagementModelStoreContainer">
-          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminUser" EntityType="Self.AdminUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Diet" EntityType="Self.Diet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pet" EntityType="Self.Pet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -155,9 +155,9 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Pet" EntitySet="Pets" />
           </AssociationSet>
-          <EntitySet Name="Admins" EntityType="PetManagementModel.Admin" />
+          <EntitySet Name="AdminUsers" EntityType="PetManagementModel.AdminUser" />
         </EntityContainer>
-        <EntityType Name="Admin">
+        <EntityType Name="AdminUser">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -204,9 +204,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="PetManagementModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
+          <EntitySetMapping Name="AdminUsers">
+            <EntityTypeMapping TypeName="PetManagementModel.AdminUser">
+              <MappingFragment StoreEntitySet="AdminUser">
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
                 <ScalarProperty Name="AdminName" ColumnName="AdminName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

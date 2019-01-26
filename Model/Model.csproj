@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>PetManagementModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Diet.cs">
       <DependentUpon>PetManagementModel.tt</DependentUpon>
     </Compile>

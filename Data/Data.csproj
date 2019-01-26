@@ -69,7 +69,9 @@
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Repositories\interfaces\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <EntityDeploy Include="Database\PetManagementModel.edmx">

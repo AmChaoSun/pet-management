@@ -12,7 +12,7 @@ namespace Model.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin
+    public partial class AdminUser
     {
         public int Id { get; set; }
         public string AdminName { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-    class AdminUserRepository : GenericRepository<AdminUser>, IAdminUserRepository
+    public class AdminUserRepository : GenericRepository<AdminUser>, IAdminUserRepository
     {
         public AdminUserRepository(PetManagementEntities context) : base(context)
         {

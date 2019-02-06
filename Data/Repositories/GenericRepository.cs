@@ -20,30 +20,30 @@ namespace Data.Repositories
         {
             _context = context;
         }
-        public T Add(T record)
+        public virtual T Add(T record)
         {
             Records.Add(record);
             _context.SaveChanges();
             return record;
         }
 
-        public void Delete(T record)
+        public virtual void Delete(T record)
         {
             Records.Remove(record);
             _context.SaveChanges();
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return Records;
         }
 
-        public T GetById(int Id)
+        public virtual T GetById(int Id)
         {
             return Records.Find(Id);
         }
 
-        public T Update(T record)
+        public virtual T Update(T record)
         {
             Records.Attach(record);
             _context.Entry(record).State = EntityState.Modified;

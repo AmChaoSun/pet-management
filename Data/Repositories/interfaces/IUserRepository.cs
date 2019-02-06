@@ -9,5 +9,6 @@ namespace Data.Repositories.interfaces
 {
     public interface IUserRepository : IGenericRepository<User>
     {
+
     }
 }

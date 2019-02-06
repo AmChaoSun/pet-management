@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\UserDisplayDto.cs" />
+    <Compile Include="DTOs\UserRegisterDto.cs" />
     <Compile Include="Models\AdminUser.cs">
       <DependentUpon>PetManagementModel.tt</DependentUpon>
     </Compile>
@@ -81,8 +83,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

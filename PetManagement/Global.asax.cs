@@ -17,6 +17,7 @@ namespace PetManagement
             AreaRegistration.RegisterAllAreas();
 
             AutomapperConfig.Initialize();
+            AutofacBootstrapper.Run();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

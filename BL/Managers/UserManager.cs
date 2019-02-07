@@ -21,8 +21,15 @@ namespace BL.Managers
         }
         public UserDisplayDto CreateUser(UserRegisterDto user)
         {
-            //User createdUser = new User            //{            //    Email = user.Email,            //    PasswordHash = HashHelper.GetMD5HashData(user.Password),            //    UserName = user.UserName,            //    CreateOn = DateTime.Now            //};            var createdUser = Mapper.Map<UserRegisterDto, User>(user);            createdUser = _userRepository.Add(createdUser);            UserDisplayDto displayUser = new UserDisplayDto            {
-                Id = createdUser != null ? createdUser.Id : 0,                UserName = createdUser.UserName,                Email = createdUser.Email,            };            return displayUser;
+            //User createdUser = new User            //{            //    Email = user.Email,            //    PasswordHash = HashHelper.GetMD5HashData(user.Password),            //    UserName = user.UserName,            //    CreateOn = DateTime.Now            //};            User createdUser = Mapper.Map<UserRegisterDto, User>(user);            createdUser = _userRepository.Add(createdUser);
+
+            //UserDisplayDto displayUser = new UserDisplayDto
+            //{
+            //    Id = createdUser != null ? createdUser.Id : 0,
+            //    UserName = createdUser.UserName,
+            //    Email = createdUser.Email,
+            //};
+            UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(createdUser);            return displayUser;
         }
     }
 }

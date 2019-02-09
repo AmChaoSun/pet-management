@@ -31,5 +31,35 @@ namespace BL.Managers
             //};
             UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(createdUser);            return displayUser;
         }
+
+        public void DeleteUser(int Id)
+        {
+            //need authentication
+            var user = _userRepository.GetById(Id);
+            _userRepository.Delete(user);
+        }
+
+        public IEnumerable<UserDisplayDto> GetAll()
+        {
+            IEnumerable<User> users = _userRepository.GetAll();
+            IEnumerable<UserDisplayDto> userDisplayDtos = Mapper.Map<IEnumerable<User>, IEnumerable<UserDisplayDto>>(users);
+            return userDisplayDtos;
+        }
+
+        public UserDisplayDto GetUser(int Id)
+        {
+            var user = _userRepository.GetById(Id);
+            UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(user);
+            return displayUser;
+        }
+
+        public UserDisplayDto UpdateUser(int Id, UserDisplayDto user)
+        {
+            //need authentication
+            User updatedUser = Mapper.Map<UserDisplayDto, User>(user);
+            updatedUser = _userRepository.Update(updatedUser);
+            UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(updatedUser);
+            return displayUser;
+        }
     }
 }

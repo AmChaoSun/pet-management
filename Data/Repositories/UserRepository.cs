@@ -19,6 +19,10 @@ namespace Data.Repositories
             if (_context.Users.Any(x => x.UserName == record.UserName)) { return null; }
             return base.Add(record);
         }
+        public override IEnumerable<User> GetAll()
+        {
+            return base.GetAll();
+        }
     }
 }
 

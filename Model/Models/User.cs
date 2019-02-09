@@ -22,7 +22,6 @@ namespace Model.Models
     
         public int Id { get; set; }
         public string UserName { get; set; }
-        public int UserId { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
         public System.DateTime CreateOn { get; set; }

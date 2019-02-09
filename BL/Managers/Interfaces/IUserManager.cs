@@ -9,6 +9,11 @@ namespace BL.Managers.Interfaces
 {
     public interface IUserManager
     {
-        UserDisplayDto CreateUser(UserRegisterDto user); 
+        UserDisplayDto CreateUser(UserRegisterDto user);
+        IEnumerable<UserDisplayDto> GetAll();
+        UserDisplayDto GetUser(int Id);
+        UserDisplayDto UpdateUser(int Id, UserDisplayDto user);
+        void DeleteUser(int Id);
+        
     }
 }

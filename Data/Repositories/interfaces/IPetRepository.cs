@@ -9,5 +9,6 @@ namespace Data.Repositories.interfaces
 {
     public interface IPetRepository : IGenericRepository<Pet>
     {
+        IEnumerable<Diet> GetPetsByOwner(int id);
     }
 }

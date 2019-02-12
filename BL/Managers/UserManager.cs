@@ -23,20 +23,15 @@ namespace BL.Managers
         {
             //User createdUser = new User            //{            //    Email = user.Email,            //    PasswordHash = HashHelper.GetMD5HashData(user.Password),            //    UserName = user.UserName,            //    CreateOn = DateTime.Now            //};            User createdUser = Mapper.Map<UserRegisterDto, User>(user);            createdUser = _userRepository.Add(createdUser);
 
-            //UserDisplayDto displayUser = new UserDisplayDto
-            //{
-            //    Id = createdUser != null ? createdUser.Id : 0,
-            //    UserName = createdUser.UserName,
-            //    Email = createdUser.Email,
-            //};
             UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(createdUser);            return displayUser;
         }
 
-        public void DeleteUser(int Id)
+        public bool DeleteUser(int Id)
         {
-            //need authentication
             var user = _userRepository.GetById(Id);
+            if (user == null) { return false; }
             _userRepository.Delete(user);
+            return true;
         }
 
         public IEnumerable<UserDisplayDto> GetAll()
@@ -55,7 +50,6 @@ namespace BL.Managers
 
         public UserDisplayDto UpdateUser(int Id, UserDisplayDto user)
         {
-            //need authentication
             User updatedUser = Mapper.Map<UserDisplayDto, User>(user);
             updatedUser = _userRepository.Update(updatedUser);
             UserDisplayDto displayUser = Mapper.Map<User, UserDisplayDto>(updatedUser);

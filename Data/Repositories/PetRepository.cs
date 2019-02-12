@@ -14,5 +14,11 @@ namespace Data.Repositories
         public PetRepository(PetManagementEntities context) : base(context)
         {
         }
+
+        public IEnumerable<Diet> GetPetsByOwner(int id)
+        {
+            var pets = _context.Pets.Where(x => x.OwnerID == id).Join(_context.Diets, p => p.PetId, d => d.DietId, (p, d) => d);
+            return pets;
+        }
     }
 }

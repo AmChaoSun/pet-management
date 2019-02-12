@@ -13,7 +13,7 @@ namespace BL.Managers.Interfaces
         IEnumerable<UserDisplayDto> GetAll();
         UserDisplayDto GetUser(int Id);
         UserDisplayDto UpdateUser(int Id, UserDisplayDto user);
-        void DeleteUser(int Id);
+        bool DeleteUser(int Id);
         
     }
 }
